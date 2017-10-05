@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+import {MdButtonModule, MdListModule, MdToolbarModule} from '@angular/material';
 
 import { NgModule } from '@angular/core';
 
@@ -11,7 +11,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    MdButtonModule
+    MdButtonModule,
+    MdListModule,
+    MdToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
