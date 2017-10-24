@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {OauthService} from './oauth.service';
-import {SpotifyService} from './spotify.service';
 
 @Component({
   selector: 'app-root',
@@ -10,32 +10,26 @@ import {SpotifyService} from './spotify.service';
 
 export class AppComponent implements OnInit {
 
-  links = [];
-
   loggedIn = false;
 
-  constructor(private spotifyService: SpotifyService, private oauthService: OauthService) {
+  constructor(private oauthService: OauthService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.configureOauthService();
     this.loggedIn = this.oauthService.isLoggedIn();
 
-    if (!this.loggedIn) {
-      return;
+    if (this.loggedIn) {
+      this.router.navigate(['/playlists']);
     }
-
-    this.spotifyService.getPlaylists().then((playlist) => {
-      this.links = playlist;
-    });
-    this.links = ['1'];
   }
 
   private configureOauthService(): void {
     this.oauthService.authenticationUri = 'https://accounts.spotify.com/authorize';
     this.oauthService.clientId = '052ae0bc7d7347a390fc36bf8836fe75';
     this.oauthService.scope = 'playlist-read-private';
-    this.oauthService.redirectUri = window.location.origin + window.location.pathname;
+    this.oauthService.redirectUri = window.location.origin;
   }
 
   login(): void {

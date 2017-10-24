@@ -4,8 +4,5 @@
 
 <button (click)="login()" *ngIf="!loggedIn">Login</button>
 
-<md-nav-list>
-  <md-list-item *ngFor="let link of links">
-     <a mdLine href="...">{{ link }}</a>
-  </md-list-item>
-</md-nav-list>
+<router-outlet></router-outlet>
+

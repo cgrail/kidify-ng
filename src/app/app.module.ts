@@ -8,16 +8,22 @@ import {AppComponent} from './app.component';
 import {OauthService} from './oauth.service';
 import {SpotifyService} from './spotify.service';
 
+import {AppRoutingModule} from './app-routing.module';
+
+import {PlaylistsComponent} from './playlists.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlaylistsComponent
   ],
   imports: [
     HttpModule,
     BrowserModule,
     MdButtonModule,
     MdListModule,
-    MdToolbarModule
+    MdToolbarModule,
+    AppRoutingModule
   ],
   providers: [
     SpotifyService,
