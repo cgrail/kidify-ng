@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   private configureOauthService(): void {
     this.oauthService.authenticationUri = 'https://accounts.spotify.com/authorize';
     this.oauthService.clientId = '052ae0bc7d7347a390fc36bf8836fe75';
-    this.oauthService.scope = 'user-read-private user-read-email';
+    this.oauthService.scope = 'playlist-read-private';
     this.oauthService.redirectUri = window.location.origin + window.location.pathname;
   }
 
