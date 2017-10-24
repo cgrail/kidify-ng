@@ -2,6 +2,8 @@
     Kidify - Spotify for Kids
 </md-toolbar>
 
+<button (click)="login()" *ngIf="!loggedIn">Login</button>
+
 <md-nav-list>
   <md-list-item *ngFor="let link of links">
      <a mdLine href="...">{{ link }}</a>
