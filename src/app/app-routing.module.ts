@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {PlaylistsComponent} from './views/playlists/playlists.component';
 import {LoginComponent} from './views/login/login.component';
-import {OauthService} from './oauth.service';
+import {OauthService} from './services/oauth.service';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},

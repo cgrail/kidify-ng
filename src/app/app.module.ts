@@ -5,8 +5,8 @@ import {HttpModule} from '@angular/http';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {OauthService} from './oauth.service';
-import {SpotifyService} from './spotify.service';
+import {OauthService} from './services/oauth.service';
+import {SpotifyService} from './services/spotify.service';
 
 import {AppRoutingModule} from './app-routing.module';
 
