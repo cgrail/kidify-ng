@@ -12,12 +12,14 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {PlaylistsComponent} from './views/playlists/playlists.component';
 import {LoginComponent} from './views/login/login.component';
+import {AlbumsComponent} from './views/albums/albums.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlaylistsComponent,
-    LoginComponent
+    LoginComponent,
+    AlbumsComponent
   ],
   imports: [
     HttpModule,
