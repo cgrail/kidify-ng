@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'playlists', component: PlaylistsComponent},
-  {path: 'albums/:playlistId', component: AlbumsComponent}
+  {path: 'albums/:userId/:playlistId', component: AlbumsComponent}
 ];
 
 @NgModule({

@@ -18,6 +18,16 @@ export class SpotifyService {
       });
   }
 
+  getAlbums(userId: String, playlistId: String): Promise<any> {
+    const url = 'https://api.spotify.com/v1/users/' + userId + '/playlists/' + playlistId + '?fields=tracks.items(track(album(name,href)))';
+    return this.http.get(url, this.getHttpOptions())
+      .toPromise()
+      .then(response => response.json())
+      .then(function (result) {
+        return result.tracks.items.map((item) => item.track.album.name);
+      });
+  }
+
   private getHttpOptions(): RequestOptions {
     const headers = new Headers({'Authorization': 'Bearer ' + this.oauthService.getToken()});
     const options = new RequestOptions({headers: headers});

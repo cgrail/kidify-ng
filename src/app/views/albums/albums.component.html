@@ -1,3 +1,9 @@
 <p>
   Albums from Playlist {{ playlistId }}
 </p>
+
+<md-nav-list>
+  <md-list-item *ngFor="let album of albums">
+    <a mdLine>{{ album }}</a>
+  </md-list-item>
+</md-nav-list>
