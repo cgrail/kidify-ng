@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'albums/:userId/:playlistId', component: AlbumsComponent},
-  {path: 'tracks/:albumUrl', component: TracksComponent}
+  {path: 'tracks/:albumId', component: TracksComponent}
 ];
 
 @NgModule({

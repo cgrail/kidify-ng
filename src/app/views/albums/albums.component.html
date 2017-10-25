@@ -4,6 +4,6 @@
 
 <md-nav-list>
   <md-list-item *ngFor="let album of albums">
-    <a mdLine [routerLink]="['/tracks', album.href]">{{ album.name }}</a>
+    <a mdLine [routerLink]="['/tracks', album.id]">{{ album.name }}</a>
   </md-list-item>
 </md-nav-list>

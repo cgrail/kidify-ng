@@ -21,7 +21,7 @@ export class SpotifyService {
   }
 
   getAlbums(userId: String, playlistId: String): Promise<Album[]> {
-    const url = 'https://api.spotify.com/v1/users/' + userId + '/playlists/' + playlistId + '?fields=tracks.items(track(album(name,href)))';
+    const url = 'https://api.spotify.com/v1/users/' + userId + '/playlists/' + playlistId + '?fields=tracks.items(track(album(name,id)))';
     return this.http.get(url, this.getHttpOptions())
       .toPromise()
       .then(response => response.json())
@@ -30,16 +30,17 @@ export class SpotifyService {
         const albums = new Array<Album>();
         result.tracks.items.map((item) => {
           const album = item.track.album;
-          if (!albumKeys.includes(album.href)) {
+          if (!albumKeys.includes(album.id)) {
             albums.push(album);
-            albumKeys.push(album.href);
+            albumKeys.push(album.id);
           }
         });
         return albums;
       });
   }
 
-  getTracks(url: string): Promise<Track[]> {
+  getTracks(albumId: string): Promise<Track[]> {
+    const url = 'https://api.spotify.com/v1/albums/' + albumId;
     return this.http.get(url, this.getHttpOptions())
       .toPromise()
       .then(response => response.json())

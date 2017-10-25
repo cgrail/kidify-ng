@@ -16,8 +16,8 @@ export class TracksComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const albumUrl = this.route.snapshot.paramMap.get('albumUrl');
-    this.spotifyService.getTracks(albumUrl).then((tracks) => {
+    const albumId = this.route.snapshot.paramMap.get('albumId');
+    this.spotifyService.getTracks(albumId).then((tracks) => {
       this.tracks = tracks;
     });
   }

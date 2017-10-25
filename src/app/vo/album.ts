@@ -1,4 +1,4 @@
 export class Album {
-  href: String;
+  id: String;
   name: string;
 }
