@@ -5,12 +5,14 @@ import {PlaylistsComponent} from './views/playlists/playlists.component';
 import {LoginComponent} from './views/login/login.component';
 import {OauthService} from './services/oauth.service';
 import {AlbumsComponent} from './views/albums/albums.component';
+import {TracksComponent} from './views/tracks/tracks.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'playlists', component: PlaylistsComponent},
-  {path: 'albums/:userId/:playlistId', component: AlbumsComponent}
+  {path: 'albums/:userId/:playlistId', component: AlbumsComponent},
+  {path: 'tracks/:albumUrl', component: TracksComponent}
 ];
 
 @NgModule({

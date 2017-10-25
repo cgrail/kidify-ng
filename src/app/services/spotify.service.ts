@@ -3,6 +3,7 @@ import {Headers, Http, RequestOptions} from '@angular/http';
 import {OauthService} from './oauth.service';
 import 'rxjs/add/operator/toPromise';
 import {Album} from '../vo/album';
+import {Track} from '../vo/track';
 
 @Injectable()
 export class SpotifyService {
@@ -35,6 +36,15 @@ export class SpotifyService {
           }
         });
         return albums;
+      });
+  }
+
+  getTracks(url: string): Promise<Track[]> {
+    return this.http.get(url, this.getHttpOptions())
+      .toPromise()
+      .then(response => response.json())
+      .then(function (result) {
+        return result.tracks.items;
       });
   }
 
