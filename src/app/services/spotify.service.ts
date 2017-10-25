@@ -14,7 +14,7 @@ export class SpotifyService {
       .toPromise()
       .then(response => response.json())
       .then(function (result) {
-        return result.items.map(item => item.name);
+        return result.items;
       });
   }
 

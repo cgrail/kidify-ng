@@ -7,15 +7,15 @@ import {SpotifyService} from '../../services/spotify.service';
 })
 export class PlaylistsComponent implements OnInit {
 
-  links = [];
+  playlists = [];
 
   constructor(private spotifyService: SpotifyService) {
   }
 
   ngOnInit(): void {
 
-    this.spotifyService.getPlaylists().then((playlist) => {
-      this.links = playlist;
+    this.spotifyService.getPlaylists().then((playlists) => {
+      this.playlists = playlists;
     });
   }
 
