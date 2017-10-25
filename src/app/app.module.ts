@@ -10,12 +10,14 @@ import {SpotifyService} from './spotify.service';
 
 import {AppRoutingModule} from './app-routing.module';
 
-import {PlaylistsComponent} from './playlists.component';
+import {PlaylistsComponent} from './views/playlists/playlists.component';
+import {LoginComponent} from './views/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlaylistsComponent
+    PlaylistsComponent,
+    LoginComponent
   ],
   imports: [
     HttpModule,
@@ -32,4 +34,5 @@ import {PlaylistsComponent} from './playlists.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
 }

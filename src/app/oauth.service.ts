@@ -7,10 +7,11 @@ export class OauthService {
   public scope: string = null;
   public redirectUri: string;
 
-  constructor() {
+  extractToken(): void {
     const params = this.getHashParams();
     if (params.access_token) {
       this.token = params.access_token;
+      console.log(this.token);
     }
   }
 
